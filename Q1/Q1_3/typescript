@@ -1,0 +1,15 @@
+Script started on 2022-05-14 04:35:20-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="206" LINES="42"]
+]0;mohammad@ubuntu: ~/Downloads/mininet/custom[01;32mmohammad@ubuntu[00m:[01;34m~/Downloads/mininet/custom[00m$ sudo wiresharklkmn wireshark-c[Kpython create_net.py
+[sudo] password for mohammad: 
+mininet> exith1 ping -c 4 h3[C[C[C[C[C[C[C[C[Csh ./push_flows.sh[C[C[C[C[C[C[C[C[Cexit[Ksh ./push_flows.sh
+mininet> sh ./push_flows.sh[C[C[C[C[C[C[C[C[Cexit[Kh1 ping -c 4 h3[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kpingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 
+h2 -> h1 h3 
+h3 -> h1 h2 
+*** Results: 0% dropped (6/6 received)
+mininet> exit
+]0;mohammad@ubuntu: ~/Downloads/mininet/custom[01;32mmohammad@ubuntu[00m:[01;34m~/Downloads/mininet/custom[00m$ exit
+exit
+
+Script done on 2022-05-14 04:35:46-07:00 [COMMAND_EXIT_CODE="0"]

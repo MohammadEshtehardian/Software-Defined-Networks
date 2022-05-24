@@ -1,0 +1,89 @@
+Script started on 2022-05-01 07:53:03-07:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="274" LINES="63"]
+]0;mohammad@ubuntu: ~/Downloads/mininet/custom[01;32mmohammad@ubuntu[00m:[01;34m~/Downloads/mininet/custom[00m$ sudo mn --custom=create_net.py --topo=mytopo
+[sudo] password for mohammad: 
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+Host1 Host2 
+*** Adding switches:
+S1 S2 
+*** Adding links:
+(Host1, S1) (S1, S2) (S2, Host2) 
+*** Configuring hosts
+Host1 Host2 
+*** Starting controller
+c0 
+*** Starting 2 switches
+S1 S2 ...
+*** Starting CLI:
+mininet> net
+Host1 Host1-eth0:S1-eth1
+Host2 Host2-eth0:S2-eth2
+S1 lo:  S1-eth1:Host1-eth0 S1-eth2:S2-eth1
+S2 lo:  S2-eth1:S1-eth2 S2-eth2:Host2-eth0
+c0
+mininet> sh ovs-ofctl add-flow S1 in_port="S1-r[Keth1",actions=output:"S1-eth2"
+mininet> sh ovs-ofctl add-flow S1 in_port="S1-eth1",actions=output:"S1-eth2"[1P",actions=output:"S1-eth2"2",actions=output:"S1-eth2"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P"1"[C[C[C[C[C
+mininet> sh ovs-ofctl add-flow S1 in_port="S1-eth2",actions=output:"S1-eth1"1",actions=output:"S1-eth2"[C[1P in_port="S1-eth1",actions=output:"S1-eth2"
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2 in_port="S1-eth1",actions=output:"S1-eth2"
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P-eth1",actions=output:"S1-eth2"2-eth1",actions=output:"S1-eth2"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P-eth2"2-eth2"[C[C[C[C[C[C
+mininet> sh ovs-ofctl add-flow S2 in_port="S2-eth1",actions=output:"S2-eth2"[1P"1"[C[1P",actions=output:"S2-eth1"2",actions=output:"S2-eth1"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+mininet> sh ovs-ofctl dump-flows S1
+ cookie=0x0, duration=62.228s, table=0, n_packets=1, n_bytes=70, in_port="S1-eth1" actions=output:"S1-eth2"
+ cookie=0x0, duration=41.406s, table=0, n_packets=2, n_bytes=177, in_port="S1-eth2" actions=output:"S1-eth1"
+mininet> sh ovs-ofctl dump-flows S1[K2
+ cookie=0x0, duration=28.712s, table=0, n_packets=0, n_bytes=0, in_port="S2-eth1" actions=output:"S2-eth2"
+ cookie=0x0, duration=21.683s, table=0, n_packets=0, n_bytes=0, in_port="S2-eth2" actions=output:"S2-eth1"
+mininet> pingall[K[K[K[K[K[K[KHost [K1 ping -c 4 Host2
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=0.275 ms
+
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=0.044 ms
+
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=0.049 ms
+
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=0.048 ms
+
+
+
+--- 10.0.0.2 ping statistics ---
+
+4 packets transmitted, 4 received, 0% packet loss, time 3078ms
+
+rtt min/avg/max/mdev = 0.044/0.104/0.275/0.098 ms
+
+mininet> Host1 ping -c 4 Host2[1P[1@2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K1
+PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
+
+64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=0.039 ms
+
+64 bytes from 10.0.0.1: icmp_seq=2 ttl=64 time=0.050 ms
+
+64 bytes from 10.0.0.1: icmp_seq=3 ttl=64 time=0.051 ms
+
+64 bytes from 10.0.0.1: icmp_seq=4 ttl=64 time=0.060 ms
+
+
+
+--- 10.0.0.1 ping statistics ---
+
+4 packets transmitted, 4 received, 0% packet loss, time 3057ms
+
+rtt min/avg/max/mdev = 0.039/0.050/0.060/0.007 ms
+
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 3 links
+...
+*** Stopping 2 switches
+S1 S2 
+*** Stopping 2 hosts
+Host1 Host2 
+*** Done
+completed in 210.330 seconds
+]0;mohammad@ubuntu: ~/Downloads/mininet/custom[01;32mmohammad@ubuntu[00m:[01;34m~/Downloads/mininet/custom[00m$ exit
+exit
+
+Script done on 2022-05-01 07:57:12-07:00 [COMMAND_EXIT_CODE="0"]

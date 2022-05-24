@@ -1,0 +1,15 @@
+Script started on 2022-05-17 07:46:20-07:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="206" LINES="42"]
+]0;mohammad@ubuntu: ~/Downloads/mininet/custom[01;32mmohammad@ubuntu[00m:[01;34m~/Downloads/mininet/custom[00m$ exitsudo python create_net.py
+[sudo] password for mohammad: 
+mininet> sh python create_flows.py
+mininet> sh python push_flows [K.py
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 
+h2 -> h1 
+*** Results: 0% dropped (2/2 received)
+mininet> exit
+]0;mohammad@ubuntu: ~/Downloads/mininet/custom[01;32mmohammad@ubuntu[00m:[01;34m~/Downloads/mininet/custom[00m$ exit
+exit
+
+Script done on 2022-05-17 07:47:15-07:00 [COMMAND_EXIT_CODE="0"]

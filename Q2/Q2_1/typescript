@@ -1,0 +1,42 @@
+Script started on 2022-05-06 12:44:12-07:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="274" LINES="61"]
+]0;mohammad@ubuntu: ~/Downloads/mininet/custom[01;32mmohammad@ubuntu[00m:[01;34m~/Downloads/mininet/custom[00m$ sudo python test1.py[10Pmn -cpython test1.py[5P./push_flows.shsudo python test1.py[10Pmn -cpython test1.py[Ksudo python test1.py[10Pmn -cpython test1.py[5P./push_flows.shsudo mn --custom=create_net.py --topo=mytopocript[Kudo mn --custom=create_net.py --topo=mytopo[29P./push_flows.shsudo python test1.py[10Pmn -cpython test1.py[Ksudo mn --custom=create_net.py --topo=mytopo --switch=default,protocols=P[KOpenFlow13 --controller=remote,ip=127.0.0.1
+[sudo] password for mohammad: 
+*** Creating network
+*** Adding controller
+Connecting to remote controller at 127.0.0.1:6653
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 h7 h8 
+*** Adding switches:
+s1 s2 s3 s4 s5 s6 s7 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s2) (h4, s2) (h5, s3) (h6, s3) (h7, s4) (h8, s4) (s1, s5) (s2, s5) (s3, s6) (s4, s6) (s5, s7) (s6, s7) 
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 h7 h8 
+*** Starting controller
+c0 
+*** Starting 7 switches
+s1 s2 s3 s4 s5 s6 s7 ...
+*** Starting CLI:
+mininet> sh ovs-ofctl dump-flows s7
+2022-05-06T19:45:42Z|00001|vconn|WARN|unix:/var/run/openvswitch/s7.mgmt: version negotiation failed (we support version 0x01, peer supports version 0x04)
+ovs-ofctl: s7: failed to connect to socket (Broken pipe)
+mininet> sh ovs-ofctl dump-flows s7[C s7- s7O s7[C s7O s7p s7e s7n s7F s7l s7o s7w s71 s73 s7
+ cookie=0x2b00000000000024, duration=38.317s, table=0, n_packets=16, n_bytes=1360, priority=100,dl_type=0x88cc actions=CONTROLLER:65535
+ cookie=0x2b00000000000077, duration=32.370s, table=0, n_packets=23, n_bytes=1943, priority=2,in_port="s7-eth2" actions=output:"s7-eth1"
+ cookie=0x2b00000000000078, duration=32.369s, table=0, n_packets=23, n_bytes=1943, priority=2,in_port="s7-eth1" actions=output:"s7-eth2"
+ cookie=0x2b00000000000024, duration=38.317s, table=0, n_packets=31, n_bytes=4240, priority=0 actions=drop
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 14 links
+..............
+*** Stopping 7 switches
+s1 s2 s3 s4 s5 s6 s7 
+*** Stopping 8 hosts
+h1 h2 h3 h4 h5 h6 h7 h8 
+*** Done
+completed in 52.770 seconds
+]0;mohammad@ubuntu: ~/Downloads/mininet/custom[01;32mmohammad@ubuntu[00m:[01;34m~/Downloads/mininet/custom[00m$ exit
+exit
+
+Script done on 2022-05-06 12:46:13-07:00 [COMMAND_EXIT_CODE="0"]
